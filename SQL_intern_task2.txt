@@ -1,0 +1,67 @@
+---Create the table
+CREATE TABLE PLAYERS(
+name VARCHAR(200),
+age INTEGER,
+score INTEGER
+);
+------------------------------------
+INSERT INTO players(name, age, score) 
+VALUES('ROHIT',36,264);
+INSERT INTO players(name, age, score) 
+VALUES('VIRAT',34,183);
+INSERT INTO players(name, age, score) 
+VALUES('SHIKHAR',33,152);
+INSERT INTO players(name, age, score) 
+VALUES('KL RAHUL',36,200);
+INSERT INTO players(name, age, score) 
+VALUES('RAHANE',36,105);
+---------------------------------
+select * from players;
+
+UPDATE players
+SET score=145
+WHERE name='RAHANE';
+------------
+DELETE FROM players
+WHERE score=152;
+select * from players;
+-----------------
+
+###To handle missing score;
+INSERT INTO players(name, age) VALUES ('GILL', 25);
+-----------------
+###checking missing values
+SELECT * FROM players
+WHERE score IS NULL;
+----------------------------
+
+-- Create the table with default score as 0
+CREATE TABLE player (
+    name VARCHAR(200),
+    age INTEGER,
+    score INTEGER DEFAULT 0
+);
+
+-- Insert data
+INSERT INTO player(name, age, score) VALUES ('ROHIT', 36, 264);
+INSERT INTO player(name, age, score) VALUES ('VIRAT', 34, 183);
+INSERT INTO player(name, age, score) VALUES ('SHIKHAR', 33, 152);
+INSERT INTO player(name, age, score) VALUES ('KL RAHUL', 36, 200);
+INSERT INTO player(name, age, score) VALUES ('RAHANE', 36, 105);
+
+-- Update score for RAHANE
+UPDATE player
+SET score = 145
+WHERE name = 'RAHANE';
+
+-- View the final table
+SELECT * FROM player;
+
+
+###To handle missing score;
+INSERT INTO players(name, age) VALUES ('GILL', 25);
+###checking missing values
+SELECT * FROM players
+WHERE score IS NULL;
+
+
