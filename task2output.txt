@@ -1,0 +1,191 @@
+SQL> CREATE TABLE PLAYERS(
+  2  name VARCHAR(200),
+  3  age INTEGER,
+  4  score INTEGER
+  5  );
+
+Table created.
+
+SQL> INSERT INTO players(name, age, score)
+  2  VALUES('ROHIT',36,264);
+
+1 row created.
+
+SQL> INSERT INTO players(name, age, score)
+  2  VALUES('VIRAT',34,183);
+
+1 row created.
+
+SQL> INSERT INTO players(name, age, score)
+  2  VALUES('SHIKHAR',33,152);
+
+1 row created.
+
+SQL> INSERT INTO players(name, age, score)
+  2  VALUES('KL RAHUL',36,200);
+
+1 row created.
+
+SQL> INSERT INTO players(name, age, score)
+  2  VALUES('RAHANE',36,105);
+
+1 row created.
+
+SQL> select * from players;
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+ROHIT                                                                           
+        36        264                                                           
+                                                                                
+VIRAT                                                                           
+        34        183                                                           
+                                                                                
+SHIKHAR                                                                         
+        33        152                                                           
+                                                                                
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+KL RAHUL                                                                        
+        36        200                                                           
+                                                                                
+RAHANE                                                                          
+        36        105                                                           
+                                                                                
+
+SQL> UPDATE players
+  2  SET score=145
+  3  WHERE name='RAHANE';
+
+1 row updated.
+
+SQL> DELETE FROM players
+  2  WHERE score=152;
+
+1 row deleted.
+
+SQL> select * from players;
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+ROHIT                                                                           
+        36        264                                                           
+                                                                                
+VIRAT                                                                           
+        34        183                                                           
+                                                                                
+KL RAHUL                                                                        
+        36        200                                                           
+                                                                                
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+RAHANE                                                                          
+        36        145                                                           
+                                                                                
+
+SQL> INSERT INTO players(name, age) VALUES ('GILL', 25);
+
+1 row created.
+
+SQL> SELECT * FROM players
+  2  WHERE score IS NULL;
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+GILL                                                                            
+        25                                                                      
+                                                                                
+
+SQL> CREATE TABLE player (
+  2      name VARCHAR(200),
+  3      age INTEGER,
+  4      score INTEGER DEFAULT 0
+  5  );
+
+Table created.
+
+SQL> 
+SQL> INSERT INTO player(name, age, score) VALUES ('ROHIT', 36, 264);
+
+1 row created.
+
+SQL> INSERT INTO player(name, age, score) VALUES ('VIRAT', 34, 183);
+
+1 row created.
+
+SQL> INSERT INTO player(name, age, score) VALUES ('SHIKHAR', 33, 152);
+
+1 row created.
+
+SQL> INSERT INTO player(name, age, score) VALUES ('KL RAHUL', 36, 200);
+
+1 row created.
+
+SQL> INSERT INTO player(name, age, score) VALUES ('RAHANE', 36, 105);
+
+1 row created.
+
+SQL> UPDATE player
+  2  SET score = 145
+  3  WHERE name = 'RAHANE';
+
+1 row updated.
+
+SQL> SELECT * FROM player;
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+ROHIT                                                                           
+        36        264                                                           
+                                                                                
+VIRAT                                                                           
+        34        183                                                           
+                                                                                
+SHIKHAR                                                                         
+        33        152                                                           
+                                                                                
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+KL RAHUL                                                                        
+        36        200                                                           
+                                                                                
+RAHANE                                                                          
+        36        145                                                           
+                                                                                
+
+SQL> INSERT INTO players(name, age) VALUES ('GILL', 25);
+
+1 row created.
+
+SQL> SELECT * FROM players
+  2  WHERE score IS NULL;
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+       AGE      SCORE                                                           
+---------- ----------                                                           
+GILL                                                                            
+        25                                                                      
+                                                                                
+GILL                                                                            
+        25                                                                      
+                                                                                
+
+SQL> SPOOL OFF
